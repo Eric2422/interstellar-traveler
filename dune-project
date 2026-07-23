@@ -21,6 +21,6 @@
  (description "Calculations of space and time dilation for an interstellar traveler.")
  (depends ocaml)
  (tags
-  ("add topics" "to describe" your project)))
+  ("physics")))
 
 ; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
