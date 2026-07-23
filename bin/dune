@@ -1,0 +1,4 @@
+(executable
+ (public_name interstellar-traveler)
+ (name main)
+ (libraries interstellar_traveler))
