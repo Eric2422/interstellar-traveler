@@ -1,14 +1,13 @@
 let age =
   print_string
-    "Greetings, traveler.\n\
-     Enter your your age as a decimal number of years (e.g., 3.14): ";
+    "Greetings, traveler.\nEnter your your age in years (decimals accepted): ";
   float_of_string (read_line ())
-in
-print_float age;
 
-let speed =
+let max_speed =
   print_string
     "Enter the maximum speed of your spaceship in meters per second (m/s): ";
   float_of_string (read_line ())
-in
-print_float speed
+
+let proper_mass =
+  print_string "Enter the proper mass of your spaceship in kilograms (kg): ";
+  float_of_string (read_line ())
