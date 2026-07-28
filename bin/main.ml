@@ -1,3 +1,7 @@
+let () = 
+  if Array.length Sys.argv < 2 then raise (Failure "Missing input filepath")
+  let json = Yojson.Basic.from_file Sys.argv.(1)
+
 let age =
   print_string
     "Greetings, traveler.\nEnter your your age in years (decimals accepted): ";
