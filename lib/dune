@@ -1,2 +1,3 @@
 (library
- (name interstellar_traveler))
+ (name interstellar_traveler)
+ (libraries yojson))
