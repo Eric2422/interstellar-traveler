@@ -1,18 +1,13 @@
 let () =
-  if Array.length Sys.argv < 2 then raise (Failure "Missing input filepath")
+  if Array.length Sys.argv < 2 then raise (Failure "Missing input filepath");
 
-let json = Yojson.Basic.from_file Sys.argv.(1)
+  let json = Yojson.Basic.from_file Sys.argv.(1) in
 
-let age =
-  print_string
-    "Greetings, traveler.\nEnter your your age in years (decimals accepted): ";
-  float_of_string (read_line ())
+  let open Yojson.Basic.Util in
+  let age = json |> member "age" |> to_float in
+  let max_speed = json |> member "max_speed" |> to_float in
 
-let max_speed =
-  print_string
-    "Enter the maximum speed of your spaceship in meters per second (m/s): ";
-  float_of_string (read_line ())
-
-let proper_mass =
-  print_string "Enter the proper mass of your spaceship in kilograms (kg): ";
-  float_of_string (read_line ())
+  print_endline "Greetings, traveler.";
+  print_endline "Provided information:";
+  Printf.printf "\tAge: %f years" age;
+  Printf.printf "\tMaximum speed: %f m/s" max_speed
