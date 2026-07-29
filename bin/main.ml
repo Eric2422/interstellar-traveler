@@ -6,8 +6,10 @@ let () =
     let open Yojson.Basic.Util in
     let age = json |> member "age" |> to_float in
     let max_speed = json |> member "max_speed" |> to_float in
+    let proper_mass = json |> member "proper_mass" |> to_float in
 
     print_endline "Greetings, traveler.";
     print_endline "Provided information:";
-    Printf.printf "\tAge: %f years" age;
-    Printf.printf "\tMaximum speed: %f m/s" max_speed
+    Printf.printf "    Age: %f years\n" age;
+    Printf.printf "    Maximum speed: %f m/s\n" max_speed;
+    Printf.printf "    Proper mass: %f kg\n" proper_mass
