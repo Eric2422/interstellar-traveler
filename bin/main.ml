@@ -1,7 +1,7 @@
 let c = 299789458
 
 let () =
-    if Array.length Sys.argv < 2 then raise (Failure "Missing input filepath");
+    if Array.length Sys.argv < 2 then raise (Failure "Missing input filepath.");
 
     let json = Yojson.Basic.from_file Sys.argv.(1) in
 
