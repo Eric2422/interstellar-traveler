@@ -1,3 +1,7 @@
 {
-    
+    "destinations": ["sun", "alpha centauri"],
+    "distances": [
+        [0, 4.2],
+        [4.2, 0]
+    ]
 }
