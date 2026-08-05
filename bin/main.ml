@@ -19,12 +19,12 @@ let () =
         Printf.printf "  Proper mass: %f kg\n" proper_mass;
 
         let destinations_json = Yojson.Basic.from_file Sys.argv.(2) in
-        let destinations = destinations_json |> member "destinations" in
-        let to_string_array (json : Yojson.Basic.t) : string array =
-            json |> convert_each to_string |> Array.of_list
-        in
+        let destinations = keys destinations_json in
 
+        (* let to_string_array (json : Yojson.Basic.t) : string array =
+            json |> convert_each to_string |> Array.of_list
+        in *)
         Printf.printf "\nDestinations input file: %s\n" Sys.argv.(2);
         Array.iter
           (fun ele -> Printf.printf "- %s: %d km\n" ele 0)
-          (to_string_array destinations)
+          (Array.of_list destinations)
