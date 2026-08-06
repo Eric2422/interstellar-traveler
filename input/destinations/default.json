@@ -1,4 +1,12 @@
 {
-    "sun": { "right_ascension": 0, "declination": 0 },
-    "alpha centauri": { "right_ascension": 0, "declination": 0 }
+    "sun": {
+        "right_ascension": { "hour": 0.0, "minute": 0.0, "second": 0.0 },
+        "declination": { "degree": 0.0, "minute": 0.0, "second": 0.0 },
+        "distance": 0.0
+    },
+    "alpha centauri": {
+        "right_ascension": { "hour": 0.0, "minute": 0.0, "second": 0.0 },
+        "declination": { "degree": 0.0, "minute": 0.0, "second": 0.0 },
+        "distance": 0.0
+    }
 }

@@ -1,5 +1,8 @@
 open Yojson.Basic.Util
 
+type right_ascension = { hour : float; minute : float; second : float }
+type declination = { degree : float; minute : float; second : float }
+
 let c = 299789458
 
 let () =
@@ -21,10 +24,22 @@ let () =
         let destinations_json = Yojson.Basic.from_file Sys.argv.(2) in
         let destinations = keys destinations_json in
 
-        (* let to_string_array (json : Yojson.Basic.t) : string array =
-            json |> convert_each to_string |> Array.of_list
-        in *)
         Printf.printf "\nDestinations input file: %s\n" Sys.argv.(2);
         Array.iter
-          (fun ele -> Printf.printf "- %s: %d km\n" ele 0)
+          (fun ele ->
+            Printf.printf "- %s: %fʰ %fᵐ %fˢ, %f° %f′ %f″, %f ly\n" ele
+              (destinations_json |> member ele |> member "right_ascension"
+             |> member "hour" |> to_float)
+              (destinations_json |> member ele |> member "right_ascension"
+             |> member "minute" |> to_float)
+              (destinations_json |> member ele |> member "right_ascension"
+             |> member "second" |> to_float)
+              (destinations_json |> member ele |> member "declination"
+             |> member "degree" |> to_float)
+              (destinations_json |> member ele |> member "declination"
+             |> member "minute" |> to_float)
+              (destinations_json |> member ele |> member "declination"
+             |> member "second" |> to_float)
+              (destinations_json |> member ele |> member "declination"
+             |> member "second" |> to_float))
           (Array.of_list destinations)
